@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "id": "3840",
+      "username": "jraja",
+      "email": "rajajasti500@gmail.com",
+      "mobile": "9985384290",
+      "password": "123"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "38f3",
+      "movieId": 573435,
+      "userId": "3840",
+      "author": "jraja",
+      "content": "enjoyed the movie"
+    }
+  ]
+}
