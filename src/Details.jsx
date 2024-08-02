@@ -166,7 +166,6 @@ const Details = () => {
                           </Button>
                         </div>
                       )}
-                      <AddReview movieId={movieId} fetchReviews={fetchUserReviews} />
                       <hr />
                     </ListGroupItem>
                   ))}
@@ -175,6 +174,9 @@ const Details = () => {
               {apiReviews.length === 0 && userReviews.length === 0 && (
                 <p>No reviews available for this movie.</p>
               )}
+               {user && (
+              <AddReview movieId={movieId} fetchReviews={fetchUserReviews} />
+            )}
             </div>
           </Card.Body>
         </Card>

@@ -31,7 +31,7 @@ const AddReview = ({ movieId, fetchReviews }) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Form.Group controlId="reviewContent">
-        <Form.Label>Add your Review</Form.Label>
+        <Form.Label>Add a Review</Form.Label>
         <Form.Control
           as="textarea"
           rows={3}
