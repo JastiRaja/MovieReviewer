@@ -37,7 +37,7 @@ const App = () => {
         },
         {
           path: 'Home',
-          element: <Home searchQuery={searchQuery} />
+          element: <Home />
         },
         {
           path: 'About',
@@ -52,7 +52,7 @@ const App = () => {
           element: <Details />
         },
         {
-          path: 'reset-password', // Add the reset-password route
+          path: 'reset-password',
           element: <ResetPassword />
         }
       ]

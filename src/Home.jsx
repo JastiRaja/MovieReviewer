@@ -7,8 +7,7 @@ import { AuthContext } from './AuthContext';
 import GenreFilter from './GenreFilter'; // Import the new component
 
 const Home = () => {
-  const context = useOutletContext();
-  const searchQuery = context?.searchQuery || '';
+  const { searchQuery } = useOutletContext();
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([]);
@@ -16,7 +15,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const apiKey = 'dd21959285ddf157a57f694a5f6fdcde';
-  const { user, logout } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -63,6 +62,7 @@ const Home = () => {
         ? prev.filter(id => id !== genreId)
         : [...prev, genreId]
     );
+    console.log('Selected Genres:', selectedGenres); // Debugging line
   };
 
   const filteredMovies = movies.filter(movie =>

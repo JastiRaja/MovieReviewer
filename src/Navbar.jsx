@@ -4,7 +4,7 @@ import banner from './Banner.jpg';
 import { AuthContext } from './AuthContext';
 
 const Navbar = ({ onSearchChange, onLogout }) => {
-  const { user } = useContext(AuthContext); // Access user from AuthContext
+  const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -48,7 +48,7 @@ const Navbar = ({ onSearchChange, onLogout }) => {
         </ul>
         {user ? (
           <ul>
-            <li className='welcome-message'>Hi, {user.username}</li> {/* Display username */}
+            <li className='welcome-message'>Hi, {user.username}</li>
           </ul>
         ) : null}
         <ul>

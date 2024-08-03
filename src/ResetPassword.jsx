@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import banner from './Banner.jpg';
 
 const ResetPassword = () => {
@@ -23,12 +23,12 @@ const ResetPassword = () => {
     try {
       const response = await axios.get("http://localhost:5000/user");
       const data = response.data;
-      const userIndex = data.findIndex(user => user.uemail === email);
+      const userIndex = data.findIndex(user => user.email === email);
 
       if (userIndex !== -1) {
-        data[userIndex].upassword = newPassword;
+        const updatedUser = { ...data[userIndex], password: newPassword };
         // Update the user data on the server
-        await axios.put(`http://localhost:5000/user/${data[userIndex].id}`, data[userIndex]);
+        await axios.put(`http://localhost:5000/user/${data[userIndex].id}`, updatedUser);
         setMessage('Password updated successfully!');
         toast.success('Password updated successfully');
         navigate('/Login');
@@ -36,16 +36,17 @@ const ResetPassword = () => {
         setMessage('User not found!');
         toast.error('User not found');
       }
-    } catch (e) {
-      console.log("Error updating password:", e);
+    } catch (error) {
+      console.error("Error updating password:", error);
       setMessage('An error occurred. Please try again later.');
+      toast.error('An error occurred. Please try again later.');
     }
   };
 
   return (
     <div className='global-background'>
       <img src={banner} alt="banner" className='bannersignup'/>
-      <fieldset align="center">
+      <fieldset align="center" className='loginfield'>
         <legend><h1 className='login'>Reset Password</h1></legend>
         <form onSubmit={handleResetPassword}>
           <table>
@@ -104,11 +105,13 @@ const ResetPassword = () => {
                   </button>
                 </td>
               </tr>
-
             </tbody>
           </table>
         </form>
         {message && <p>{message}</p>}
+        <div className='asignup'>
+          Don't have an account? <NavLink to="/Signup">Sign-up</NavLink> here
+        </div>
       </fieldset>
     </div>
   );

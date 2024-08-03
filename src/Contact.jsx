@@ -1,7 +1,7 @@
 import React from 'react';
-import Navbar from './Navbar';
 import facebook from './facebook.png'
 import instagram from './insta.jpeg'
+
 const Contact = () => {
   return (
     <div className='global-background'>

@@ -140,7 +140,8 @@ section {
     background-color: #000000;
     align-content: center;
     font-size: small;
-    margin: 0px 170px;
+    /* margin: 0px 170px; */
+    margin-left: 150px;
   }
   .overview{
     margin-left: -1px;

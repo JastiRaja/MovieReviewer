@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-import { Card, Badge, ListGroup, ListGroupItem, Button, Form } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 import { MdOutlineStarOutline } from "react-icons/md";
 import { FaRegPlayCircle } from "react-icons/fa";
 import { AuthContext } from './AuthContext';

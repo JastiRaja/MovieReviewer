@@ -1,6 +1,12 @@
 {
   "user": [
-   
+    {
+      "id": "3dc6",
+      "username": "name",
+      "email": "name@gmail.com",
+      "mobile": "14564986168",
+      "password": "1234"
+    }
   ],
   "reviews": []
 }
